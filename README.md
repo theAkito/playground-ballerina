@@ -1,33 +1,13 @@
-[![nimble](https://raw.githubusercontent.com/yglukhov/nimble-tag/master/nimble.png)](https://nimble.directory/pkg/nimpackage)
-
-[![Language](https://img.shields.io/badge/language-Nim-orange.svg?style=plastic)](https://nim-lang.org/)
+[![Language](https://img.shields.io/badge/language-Ballerina-pink.svg?style=plastic)](https://ballerina.io/)
 
 [![GitHub](https://img.shields.io/badge/license-GPL--3.0-informational?style=plastic)](https://www.gnu.org/licenses/gpl-3.0.txt)
 [![Liberapay patrons](https://img.shields.io/liberapay/patrons/Akito?style=plastic)](https://liberapay.com/Akito/)
 
-## What
-This is a base template for App projects written in Nim.
-
-## Why
-Allows kickstarting new projects, without fiddling around with metadata basics.
-
-## How
-Select this is a template, when creating a new Git repository through a Git WebUI
-
-## Where
-Git.
-
-## Goals
-* Performance
-
-## Project Status
-Stable
-
-## TODO
-* Always improve
+# Language Playground
+Just playing around with Ballerina, getting to know the language.
 
 ## License
-Copyright (C) 2020  Akito <the@akito.ooo>
+Copyright © 2022  Akito <the@akito.ooo>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
