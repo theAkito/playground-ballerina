@@ -1,0 +1,7 @@
+ [container.image]
+ repository="akito13" # ex - Docker hub name
+ name="hello" # container name
+ tag="0.1.0"
+
+ [settings]
+ buildImage=false # you can make this false if you don't want to build the image and you just need the Dockerfile

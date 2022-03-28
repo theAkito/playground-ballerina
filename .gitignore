@@ -77,3 +77,7 @@ gradle-app.setting
 
 # code coverage reports
 /.jacoco
+
+
+## Exceptions for Examples
+!/src/kubernetes/docker/simple/target/
