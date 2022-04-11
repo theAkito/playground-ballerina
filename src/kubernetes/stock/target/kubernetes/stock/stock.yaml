@@ -1,0 +1,102 @@
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  labels:
+    app: "stock"
+  name: "stock-svc"
+spec:
+  ports:
+  - name: "port-1-stock-sv"
+    port: 9090
+    protocol: "TCP"
+    targetPort: 9090
+  - name: "port-2-stock-sv"
+    port: 9091
+    protocol: "TCP"
+    targetPort: 9091
+  selector:
+    app: "stock"
+  type: "ClusterIP"
+---
+apiVersion: "v1"
+kind: "ConfigMap"
+metadata:
+  name: "stock-config-json"
+data:
+  config.json: "{\n  \"greeting\": \"Hello\"\n}"
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  labels:
+    app: "stock"
+  name: "stock-deployment"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "stock"
+  template:
+    metadata:
+      labels:
+        app: "stock"
+    spec:
+      containers:
+      - image: "wso2inc/hello-k8s:v0.1.0"
+        lifecycle:
+          preStop:
+            exec:
+              command:
+              - "sleep"
+              - "15"
+        livenessProbe:
+          httpGet:
+            path: "/probes/healthz"
+            port: 9091
+          initialDelaySeconds: 30
+        name: "stock-deployment"
+        ports:
+        - containerPort: 9090
+          name: "port-1-stock-sv"
+          protocol: "TCP"
+        - containerPort: 9091
+          name: "port-2-stock-sv"
+          protocol: "TCP"
+        readinessProbe:
+          httpGet:
+            path: "/probes/readyz"
+            port: 9091
+          initialDelaySeconds: 30
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "100Mi"
+            cpu: "500m"
+        volumeMounts:
+        - mountPath: "/home/ballerina/resources/config.json"
+          name: "stock-config-json-volume"
+          readOnly: true
+          subPath: "config.json"
+      nodeSelector: {}
+      volumes:
+      - configMap:
+          name: "stock-config-json"
+        name: "stock-config-json-volume"
+---
+apiVersion: "autoscaling/v1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  labels:
+    app: "stock"
+  name: "stock-hpa"
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: "apps/v1"
+    kind: "Deployment"
+    name: "stock-deployment"
+  targetCPUUtilizationPercentage: 60

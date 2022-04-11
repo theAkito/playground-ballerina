@@ -81,3 +81,4 @@ gradle-app.setting
 
 ## Exceptions for Examples
 !/src/kubernetes/docker/simple/target/
+!/src/kubernetes/stock/target/
