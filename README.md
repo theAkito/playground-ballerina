@@ -1,5 +1,7 @@
 [![Language](https://img.shields.io/badge/language-Ballerina-pink.svg?style=plastic)](https://ballerina.io/)
 
+![Last Commit](https://img.shields.io/github/last-commit/theAkito/playground-ballerina?style=plastic)
+
 [![GitHub](https://img.shields.io/badge/license-GPL--3.0-informational?style=plastic)](https://www.gnu.org/licenses/gpl-3.0.txt)
 [![Liberapay patrons](https://img.shields.io/liberapay/patrons/Akito?style=plastic)](https://liberapay.com/Akito/)
 
