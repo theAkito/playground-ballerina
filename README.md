@@ -1,3 +1,4 @@
+[![Source](https://img.shields.io/badge/project-source-2a2f33?style=plastic)](https://github.com/theAkito/playground-ballerina)
 [![Language](https://img.shields.io/badge/language-Ballerina-pink.svg?style=plastic)](https://ballerina.io/)
 
 ![Last Commit](https://img.shields.io/github/last-commit/theAkito/playground-ballerina?style=plastic)
