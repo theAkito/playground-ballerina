@@ -7,7 +7,7 @@ public function main() {
 
                         select i * 10;
 
-                        
+
     io:println(numsTimes10);
 
     int[] evenNums = from var i in nums
