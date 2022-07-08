@@ -1,0 +1,8 @@
+[package]
+org = "akito"
+name = "bbe_mocking"
+version = "0.1.0"
+distribution = "2201.1.0"
+
+[build-options]
+observabilityIncluded = true
