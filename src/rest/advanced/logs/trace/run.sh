@@ -1,0 +1,1 @@
+bal run main.bal -- -Cballerina.http.traceLogConsole=true
